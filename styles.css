@@ -1,0 +1,254 @@
+/* Universal styles  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+:root {
+    font-size: 16px;
+    --main-color: #f8e9dd;
+    --second-color:  #fffbf6;
+    --third-color: #ec755d;
+    --highlight-color:#76b5bc;
+    --font-color: #92857a;
+    --second-font-color: #382314;
+    --third-font-color:#FFF;
+    --font-family:  'DM Sans', sans-serif;
+}
+/* Assets  */
+img {
+   max-width: 100%;
+}
+/* Typography  */
+h1 {
+    color: var(--third-font-color);
+    font-size: 0.9375rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+h2 {
+    color: var(--second-font-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-left: 1.25rem;
+}
+
+h3 {
+    color: var(--font-color);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.220625rem;
+    margin-bottom: 0.25rem;
+}
+
+h4 {
+    font-size: 0.9375rem;
+    color: var(--second-font-color);
+}
+
+header p {
+    color: var(--third-font-color);
+    font-size: 1.5rem;
+}
+
+.month-total p {
+    font-size: 1.875rem;
+    color: var(--second-font-color);
+    font-weight: 700;
+    line-height: 2.44125rem;
+    margin-top: 0.5rem;
+}
+
+.compare-last-month p {
+    color: var(--font-color);
+    font-size: 0.9375rem;
+    font-weight: 400;
+}
+
+.day p {
+    width: 1.875rem;
+    text-align: center;
+    position: absolute; 
+    bottom: -1.5rem;
+    left: - calc(2.062rem / 2 + 1.718rem);
+}
+
+/* main content  */
+body {
+    background: var(--main-color);
+    font-family: var(--font-family);
+    height: 100vh;
+    width: 100vw;
+}
+
+body,
+.img-container,
+.week-graph-container,
+.numbers-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header,
+main {
+    width: 91.5%;
+    max-width: 33.75rem;
+    border-radius: 0.625rem;
+}
+
+header {
+    background: var(--third-color);
+    height: 6.0625rem;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+    
+}
+
+.img-container {
+    position: relative;
+    padding-right: 1.5rem;
+    align-items: flex-end;
+    bottom: 3.25rem;
+}
+
+main {
+    justify-content: flex-start;
+    background: var(--second-color);
+    height: 26.3125rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.week-graph-container {
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3.25rem;
+    padding: 0;
+    padding-bottom: 1.5rem;
+    width: 88%;
+    border-bottom: 1px solid #F8E9DD;  
+}
+
+.weekday-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.day {
+    color: var(--font-color);
+    font-weight: 400;
+    font-size: 0.75rem;
+    
+}
+
+.bar {
+    width: 2.0625rem;
+    background: var(--third-color);
+    border-radius: 0.1875rem;
+}
+
+.bar:hover,
+.bar:active {
+    cursor: pointer;
+    background-color: #FF9B86;
+}
+
+.current-day {
+    background-color: var(--highlight-color);
+}
+
+.current-day:hover,
+.current-day:active {
+    background-color: #B4E0E5;
+}
+
+.numbers-container {
+    flex-direction: row;
+    width: 88%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 1.5rem;
+}
+
+.compare-last-month {
+    text-align: right;
+}
+
+/* tool tip styles */
+
+.hovertext {
+    position: relative;
+  }
+  
+  .hovertext:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    background-color: var(--second-font-color);
+    color: var(--third-font-color);
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.5625rem;
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    z-index: 1;
+    left: -2.2rem;
+    bottom: 105%;
+  }
+  
+  .hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
+  }
+
+/* Media queries */
+@media (min-width: 600px) {
+
+/* Typography  */
+    h1,
+    h3,
+    h4,
+    .compare-last-month p {
+        font-size: 1.125rem;
+    }
+    
+    h2,
+    header p {
+        font-size: 2rem;
+    }
+
+    .month-total p {
+        font-size: 3rem;
+    }
+
+    .day p {
+        position: absolute; 
+        bottom: -1.5rem;
+        right: 0.8rem;
+    }
+
+    /* main content  */
+
+    .header {
+        height: 7.8125rem;
+    }
+
+    main {
+        padding-bottom: 2.5rem;
+    }
+
+    .img-container {
+        bottom: calc(7.8125rem / 2 );
+    }
+    .bar {
+        width: 3.14875rem;
+    }
+}
