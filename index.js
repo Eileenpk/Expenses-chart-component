@@ -17,10 +17,12 @@ const graphData = data => {
         graphContainerHtml += `      
         <section class="weekday-container">
             <span class="hovertext" data-hover="$${data[i].amount}">   
-                <div class="${data[i].day} ${currentDay(data[i].day)} day bar" style="height:calc(${data[i].amount}px * 2.5 );"</div>
+            
+            <div class="${data[i].day} ${currentDay(data[i].day)} day bar" style="height:calc(${data[i].amount}px * 2.5 );"></div>
             </span>
             <p class="day">${data[i].day}</p>
-      </section>`
+      </section>
+        `
       
     }
     graphContainer.innerHTML = graphContainerHtml
